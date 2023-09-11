@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Standard Style</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div>
+    <nav id="navbar">
+      <header>standardJS Documentation</header>
+      <ul>
+        <li>
+          <a href="#JavaScript_style_guide,_linter,_and_formatter" class="nav-link">JavaScript style guide, linter, and
+            formatter</a>
+        </li>
+        <li>
+          <a href="#Install" class="nav-link">Install</a>
+        </li>
+        <li>
+          <a href="#Usage" class="nav-link">Usage</a>
+        </li>
+        <li>
+          <a href="#What_you_might_do_if_you're_clever" class="nav-link">What you might do if you're clever</a>
+        </li>
+        <li>
+          <a href="#Why_should_I_use_JavaScript_Standard_Style?" class="nav-link">Why should I use JavaScript Standard
+            Style?</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <h1>
+        <a href="https://standardjs.com/">
+          <img src="https://cdn.jsdelivr.net/gh/standard/standard@master/sticker.svg" alt="standardJS"></a>
+        <br>
+        JavaScript Standard Style
+      </h1>
+      <section class="main-section" id="JavaScript_style_guide,_linter,_and_formatter">
+        <header>JavaScript style guide, linter, and formatter</header>
+        <p>This module saves you (and others!) time in three ways:</p>
+        <ul>
+          <li><b>No configuration.</b> The easiest way to enforce code quality in your project. No decisions to make. No
+            <code>.eslintrc</code> files to manage. It just works.
+          </li>
+          <li><b>Automatically format code.</b> Just run <code>standard --fix</code> and say goodbye to messy or
+            inconsistent code.</li>
+          <li><b>Catch style issues & programmer errors early.</b> Save precious code review time by eliminating
+            back-and-forth between reviewer & contributor.</li>
+        </ul>
+        <p>Give it a try by running <code>npx standard --fix</code> right now!</p>
+      </section>
+      <section class="main-section" id="Install">
+        <header>Install</header>
+        <p>The easiest way to use JavaScript Standard Style is to install it globally as a Node command line program.
+          Run
+          the following command in Terminal:</p>
+        <code class="block">$ npm install standard --global</code>
+        <p>Or, you can install <code>standard</code> locally, for use in a single project:</p>
+        <code class="block">$ npm install standard --save-dev</code>
+        <i>Note: To run the preceding commands, <a href="http://nodejs.org" target="_blank">Node.js</a> and <a
+            href="https://npmjs.com" target="_blank">npm</a> must be installed.</i>
+      </section>
+      <section class="main-section" id="Usage">
+        <header>Usage</header>
+        <p>After you've installed <code>standard</code>, you should be able to use the <code>standard</code> program.
+          The
+          simplest use case would be checking the style of all JavaScript files in the current working directory:</p>
+        <pre><code class="block">$ standard
+Error: Use JavaScript Standard Style
+  lib/torrent.js:950:11: Expected <span>'==='</span> and instead saw <span>'=='</span>.</code></pre>
+        <p>If you've installed <code>standard</code> locally, run with <code>npx</code> instead:</p>
+        <code class="block">$ npx standard</code>
+        <p>You can optionally pass in a directory (or directories) using the glob pattern. Be sure to quote paths
+          containing glob patterns so that they are expanded by <code>standard</code> instead of your shell:</p>
+        <code class="block">$ standard <span>"src/util/**/*.js" "test/**/*.js"</span></code>
+        <p><b>Note:</b> by default <code>standard</code> will look for all files matching the patterns:
+          <code>**/*.js</code>, <code>**/*.jsx</code>.
+        </p>
+      </section>
+      <section class="main-section" id="What_you_might_do_if_you're_clever">
+        <header>What you might do if you're clever</header>
+        <ol>
+          <li>
+            <p>Add it to <code>package.json</code></p>
+            <pre><code class="block">{
+  "name": "my-cool-package",
+  "devDependencies": {
+    "standard": "*"
+  },
+  "scripts": {
+    "test": "standard && node my-tests.js"
+  }
+}</code></pre>
+          </li>
+          <li>
+            <p>Style is checked automatically when you run <code>npm test</code></p>
+            <pre><code class="block">$ npm test
+Error: Use JavaScript Standard Style
+  lib/torrent.js:950:11: Expected <span>'==='</span> and instead saw <span>'=='</span>.</code></pre>
+          </li>
+          <li>
+            <p>Never give style feedback on a pull request again!</p>
+          </li>
+        </ol>
+      </section>
+      <section class="main-section" id="Why_should_I_use_JavaScript_Standard_Style?">
+        <header>Why should I use JavaScript Standard Style?</header>
+        <p>The beauty of JavaScript Standard Style is that it's simple. No one wants to maintain multiple hundred-line
+          style configuration files for every module/project they work on. Enough of this madness!</p>
+        <p>This module saves you (and others!) time in three ways:</p>
+        <ul>
+          <li>
+            <b>No configuration.</b> The easiest way to enforce consistent style in your project. Just drop it in.
+          </li>
+          <li><b>Automatically format code.</b> Just run <code>standard --fix</code> and say goodbye to messy or
+            inconsistent code.</li>
+          <li><b>Catch style issues & programmer errors early.</b> Save precious code review time by eliminating
+            back-and-forth between reviewer & contributor.</li>
+        </ul>
+        <p>Adopting <code>standard</code> style means ranking the importance of code clarity and community conventions
+          higher than
+          personal style. This might not make sense for 100% of projects and development cultures, however open source
+          can
+          be a hostile place for newbies. Setting up clear, automated contributor expectations makes a project
+          healthier.
+        </p>
+        <p>For more info, see the conference talk <a href="https://www.youtube.com/watch?v=kuHfMw8j4xk"
+            target="_blank">"Write Perfect
+            Code with Standard and ESLint"</a>. In this talk, you'll learn about linting, when to use
+          <code>standard</code> versus <code>eslint</code>, and how <code>prettier</code> compares to
+          <code>standard</code>.
+        </p>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <span class="made-by">Copyright @
+      <script>document.write(new Date().getFullYear())</script> ChiefWoods
+    </span>
+    <a class="github-link" href="https://github.com/ChiefWoods/technical-documentation-page" target="_blank">
+      <img src="./icons/github.svg" class="github-icon" alt="GitHub">
+    </a>
+  </footer>
+</body>
+
+</html>

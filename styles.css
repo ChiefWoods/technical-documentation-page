@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  --github-black: #0D1117;
+}
+
+body {
+  display: inline-flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: calc(100vw - (100vw - 100%));
+}
+
+div {
+  display: flex;
+}
+
+/* Nav */
+
+nav {
+  border-right: 2px solid lightgrey;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+  min-width: 215px;
+  width: 25%;
+}
+
+nav>header {
+  font-size: 2.3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 12px 14px;
+  border-bottom: 1px solid lightgrey;
+}
+
+nav li {
+  border-bottom: 1px solid lightgrey;
+  width: 100%;
+}
+
+nav a {
+  color: #a00;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  padding: 12px 14px;
+}
+
+/* Main */
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto;
+  flex: 1;
+  align-items: start;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding-inline: 40px;
+  margin-left: 25%;
+}
+
+h1 {
+  font-size: 4rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+img[alt="standardJS"] {
+  width: 200px;
+}
+
+/* Section */
+
+section header {
+  color: #a00;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 2.8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-block: 24px;
+}
+
+section p,
+section li,
+section i {
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 2.8rem;
+  margin-block: 14px;
+  display: block;
+}
+
+section ul {
+  margin-block: 14px;
+  padding-left: 35px;
+}
+
+section li {
+  display: list-item;
+}
+
+code,
+.block {
+  font-size: 17px;
+  font-family: monospace;
+  background-color: black;
+  color: #d8d8d8;
+  border-radius: 4px;
+  padding: 1.6px 5.2px;
+}
+
+.block {
+  display: block;
+  padding: 12px 14px;
+}
+
+code span {
+  color: #A8FF60;
+}
+
+section a {
+  color: #a00;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  background-color: var(--github-black);
+  padding: 12px 40px;
+  z-index: 1;
+}
+
+.made-by {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin: 0 auto;
+}
+
+.github-link {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.github-icon {
+  height: 25px;
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 67.5%;
+  }
+  
+  div {
+    flex-direction: column;
+  }
+
+  nav {
+    position: static;
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    border-bottom: 2px solid lightgrey;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
