@@ -10,9 +10,9 @@ nav {
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 1;
   min-width: 215px;
   width: 25%;
+  background: white;
 }
 
 nav>header {
@@ -50,6 +50,7 @@ main {
   right: 0;
   padding-inline: 40px;
   margin-left: 25%;
+  z-index: -1;
 }
 
 h1 {
@@ -57,6 +58,7 @@ h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
   text-align: center;
+  width: 100%;
 }
 
 img[alt="standardJS"] {
@@ -64,6 +66,10 @@ img[alt="standardJS"] {
 }
 
 /* Section */
+
+section {
+  scroll-margin-top: 200px;
+}
 
 section header {
   color: #a00;
@@ -124,7 +130,7 @@ section a {
   }
 
   nav {
-    position: static;
+    position: sticky;
     width: 100%;
     height: 200px;
     overflow-y: scroll;
